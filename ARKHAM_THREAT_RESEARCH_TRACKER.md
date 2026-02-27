@@ -1,6 +1,6 @@
 # ARKHAM Security Systems — Threat Research Tracker
 
-**Last Updated:** 2026-02-20
+**Last Updated:** 2026-02-27
 **Maintained by:** ARKHAM Security Research Team
 
 This document tracks all threat categories covered across every research session. Its purpose is to ensure comprehensive coverage, prevent duplication of effort, and provide a verifiable audit trail of all training data delivered to the ARKHAM systems.
@@ -11,7 +11,57 @@ This document tracks all threat categories covered across every research session
 
 | Session | Date | File | Patterns Delivered | Systems Covered |
 |---|---|---|---|---|
+| Session 2 | 2026-02-27 | `ARKHAM_TRAINING_DATA_2026_02_27.md` | 90 (across 3 systems) | Firewall, Workforce, RoboShield |
 | Session 1 | 2026-02-20 | `ARKHAM_TRAINING_DATA_2026_02_20.md` | 44 (across 3 systems) | Firewall, Workforce, RoboShield |
+
+---
+
+## Session 2 — 2026-02-27
+
+**File:** `ARKHAM_TRAINING_DATA_2026_02_27.md`
+**Total Patterns:** 90 unique threat patterns across 3 ARKHAM systems
+
+### ARKHAM Firewall (33 Patterns)
+
+| Pattern ID | Threat Category | Severity |
+|---|---|---|
+| FW-025 | OAuth Device Flow Phishing | Critical |
+| FW-026 | HTTP/2 Rapid Reset DoS | Critical |
+| FW-027 | Web Cache Deception | High |
+| FW-028 | DNS Rebinding | High |
+| FW-029 | Subdomain Takeover | High |
+| FW-030 | Open Redirect | Medium |
+| FW-031 | Path Traversal | High |
+| FW-032 | Race Condition (TOCTOU) | High |
+| FW-033 | IDOR (Insecure Direct Object Reference) | High |
+| FW-034 | CORS Misconfiguration | High |
+| FW-035 | HTTP Parameter Pollution | Medium |
+
+### ARKHAM Workforce (24 Patterns)
+
+| Pattern ID | Threat Category | Severity |
+|---|---|---|
+| WF-013 | Many-Shot Jailbreaking | High |
+| WF-014 | Adversarial Suffix Attack | Critical |
+| WF-015 | Model Inversion | High |
+| WF-016 | Membership Inference | Medium |
+| WF-017 | Context Window Overflow | Medium |
+| WF-018 | System Prompt Extraction | High |
+| WF-019 | Data Poisoning via Fine-Tuning | Critical |
+| WF-020 | Shadow AI | High |
+
+### ARKHAM RoboShield (24 Patterns)
+
+| Pattern ID | Threat Category | Severity |
+|---|---|---|
+| RS-014 | Wi-Fi Deauthentication Attack | High |
+| RS-015 | Bluetooth Spoofing | High |
+| RS-016 | CAN Bus Injection | Critical |
+| RS-017 | Power Line Communication Attack | Medium |
+| RS-018 | Thermal Sensor Spoofing | High |
+| RS-019 | Time-of-Flight Sensor Spoofing | High |
+| RS-020 | Map Poisoning (SLAM Attack) | Critical |
+| RS-021 | Fleet Management API Attack | Critical |
 
 ---
 
@@ -103,8 +153,11 @@ Command Injection, GPS Spoofing, LiDAR Injection, Camera Feed Manipulation, IMU 
 
 ## Notes for Future Sessions
 
-Session 2 should target a minimum of **88 new patterns** (double the 44 delivered in Session 1, per the recurring research volume preference). All patterns must be entirely new and must not duplicate any category listed in this tracker. Priority areas for Session 2 include:
+**Session 2 fulfilled all priority areas.**
 
-- **Firewall:** OAuth device flow attacks, HTTP/2 rapid reset DoS, cache deception, DNS rebinding, subdomain takeover, open redirect, path traversal, race conditions, IDOR, CORS misconfiguration.
-- **Workforce:** Prompt leaking, model inversion, membership inference, data poisoning via fine-tuning, adversarial suffix attacks, many-shot jailbreaking, context window overflow, system prompt extraction.
-- **RoboShield:** Wi-Fi deauthentication, Bluetooth spoofing, CAN bus injection, power line communication attacks, thermal sensor spoofing, time-of-flight sensor spoofing, map poisoning, fleet management API attacks.
+
+Session 3 should target a minimum of **180 new patterns** (double the 90 delivered in Session 2, per the recurring research volume preference). All patterns must be entirely new and must not duplicate any category listed in this tracker. Priority areas for Session 3 include:
+
+- **Firewall:** Business logic flaws, mass assignment, XML injection, XSLT injection, host header injection, HTTP response splitting (beyond CRLF), OAuth PKCE bypass, SAML injection, API key leakage, insecure file upload.
+- **Workforce:** Prompt injection via tool output, agent loop hijacking, cross-agent data leakage, model watermarking bypass, AI-generated deepfake detection, LLM-assisted social engineering, reward hacking, specification gaming.
+- **RoboShield:** MQTT broker attack, OPC-UA exploitation, Modbus injection, DNP3 spoofing, robot arm trajectory manipulation, battery management system attack, charging station spoofing, robot-to-robot communication attack.
